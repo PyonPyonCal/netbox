@@ -187,6 +187,7 @@
             {% include 'inc/panels/custom_fields.html' %}
             {% include 'inc/panels/tags.html' %}
             {% include 'inc/panels/comments.html' %}
+            <!--
             <div class="card">
               <h5 class="card-header">{% trans "Virtual Device Contexts" %}</h5>
               <div class="card-body htmx-container table-responsive"
@@ -201,6 +202,7 @@
                 </div>
               {% endif %}
             </div>
+            -->
             {% plugin_left_page object %}
         </div>
         <div class="col col-12 col-xl-6">
@@ -329,6 +331,7 @@
                     </div>
                 </div>
             {% endif %}
+            <!--
             <div class="card">
               <h5 class="card-header">{% trans "Services" %}</h5>
               <div class="card-body htmx-container table-responsive"
@@ -343,7 +346,9 @@
                 </div>
               {% endif %}
             </div>
+            -->
             {% include 'inc/panels/image_attachments.html' %}
+            <!--
             <div class="card">
                 <h5 class="card-header">{% trans "Dimensions" %}</h5>
                 <div class="card-body table-responsive">
@@ -367,6 +372,7 @@
                     </table>
                 </div>
             </div>
+            -->
             {% if object.rack and object.position %}
               <div class="row" style="margin-bottom: 20px">
                 <div class="col col-md-6 col-sm-6 col-xs-12 text-center">
