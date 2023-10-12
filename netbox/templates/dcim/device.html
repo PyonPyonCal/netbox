@@ -30,6 +30,7 @@
                             <th scope="row">{% trans "Site" %}</th>
                             <td>{{ object.site|linkify }}</td>
                         </tr>
+                        {% if object.location %}
                         <tr>
                             <th scope="row">{% trans "Location" %}</th>
                             <td>
@@ -43,6 +44,8 @@
                             {% endif %}
                             </td>
                         </tr>
+                        {% endif %}
+                        {% if object.rack %}
                         <tr>
                             <th scope="row">{% trans "Rack" %}</th>
                             <td class="position-relative">
@@ -58,6 +61,8 @@
                                 {% endif %}
                             </td>
                         </tr>
+                        {% endif %}
+                        {% if object.position %}
                         <tr>
                             <th scope="row">{% trans "Position" %}</th>
                             <td>
@@ -77,6 +82,7 @@
                                 {% endif %}
                             </td>
                         </tr>
+                        {% endif %}
                         <tr>
                           <th scope="row">{% trans "GPS Coordinates" %}</th>
                           <td class="position-relative">
@@ -94,6 +100,7 @@
                             {% endif %}
                           </td>
                         </tr>
+                        {% if object.tenant.group %}
                         <tr>
                             <th scope="row">{% trans "Tenant" %}</th>
                             <td>
@@ -103,6 +110,7 @@
                                 {{ object.tenant|linkify|placeholder }}
                             </td>
                         </tr>
+                        {% endif %}
                         <tr>
                             <th scope="row">{% trans "Device Type" %}</th>
                             <td>
@@ -113,12 +121,14 @@
                             <th scope="row">{% trans "Description" %}</th>
                             <td>{{ object.description|placeholder }}</td>
                         </tr>
+                        {% if object.get_airflow_display %}
                         <tr>
                             <th scope="row">{% trans "Airflow" %}</th>
                             <td>
                                 {{ object.get_airflow_display|placeholder }}
                             </td>
                         </tr>
+                        {% endif %}
                         <tr>
                             <th scope="row">{% trans "Serial Number" %}</th>
                             <td class="font-monospace">{{ object.serial|placeholder }}</td>
@@ -127,10 +137,12 @@
                             <th scope="row">{% trans "Asset Tag" %}</th>
                             <td class="font-monospace">{{ object.asset_tag|placeholder }}</td>
                         </tr>
+                        {% if object.config_template %}
                         <tr>
                             <th scope="row">{% trans "Config Template" %}</th>
                             <td>{{ object.config_template|linkify|placeholder }}</td>
                         </tr>
+                        {% endif %}
                     </table>
                 </div>
             </div>
